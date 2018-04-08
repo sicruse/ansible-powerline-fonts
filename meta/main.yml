@@ -8,8 +8,9 @@ galaxy_info:
     - name: Debian
     - name: Ubuntu
     - name: Fedora
+    - name: MacOSX
 
   galaxy_tags:
     - system
- 
+
   dependencies: []
