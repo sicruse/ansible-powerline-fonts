@@ -1,5 +1,7 @@
 ---
 
+- set_fact: font_directory="{{ 'Library/Fonts' if ansible_os_family == "Darwin" | default('.local/share/fonts') }}"
+
 - name: install fontconfig
   become: ansible_os_family == "Debian"
   package:
@@ -20,17 +22,17 @@
 
 - name: ensure all users have a local fonts directory
   file:
-    dest: "{{ item.homedir }}/.local/share/fonts"
+    dest: "{{ item.homedir }}/{{ font_directory }}"
     state: directory
     owner: "{{ item.user }}"
-    group: "{{ item.user }}"
+    # group: "{{ item.user }}"
   with_items: "{{ all_users }}"
   ignore_errors: yes
   tags:
     - powerline-fonts
 
 - name: copy fonts
-  command: cp -r /tmp/powerline-fonts/{{ item[1] }} {{ item[0].homedir }}/.local/share/fonts/
+  command: cp -r /tmp/powerline-fonts/{{ item[1] }} {{ item[0].homedir }}/{{ font_directory }}
   with_nested:
    - "{{ all_users }}"
    - "{{ all_fonts }}"
@@ -39,17 +41,17 @@
 
 - name: set fonts directory ownership
   file:
-    dest: "{{ item[0].homedir }}/.local/share/fonts/{{ item[1] }}"
+    dest: "{{ item[0].homedir }}/{{ font_directory }}/{{ item[1] }}"
     state: directory
     owner: "{{ item[0].user }}"
-    group: "{{ item[0].user }}"
+    # group: "{{ item[0].user }}"
   with_nested:
    - "{{ all_users }}"
    - "{{ all_fonts }}"
-  ignore_errors: yes   
+  ignore_errors: yes
   tags:
     - powerline-fonts
 
 - name: reset font cache
-  command: fc-cache -f {{ item.homedir }}/.local/share/fonts
+  command: fc-cache -f {{ item.homedir }}/{{ font_directory }}
   with_items: "{{ all_users }}"
