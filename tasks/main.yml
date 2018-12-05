@@ -1,6 +1,7 @@
 ---
 
-- set_fact: font_directory="{{ 'Library/Fonts' if ansible_os_family == "Darwin" | default('.local/share/fonts') }}"
+- set_fact:
+    font_directory: "{{ 'Library/Fonts' if ansible_os_family == 'Darwin' else '.local/share/fonts' }}"
 
 - name: install fontconfig
   become: ansible_os_family == "Debian"
