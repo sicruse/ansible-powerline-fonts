@@ -10,12 +10,13 @@ This role installs the powerline fonts from the project [https://github.com/powe
 Role Variables
 --------------
 
+No role variables need to set due to reasonable defaults.
+
 ```yaml
 all_users:              # this role can configure for one or more users
-  - user: foo           # username
-    homedir: /home/foo  # the home dir for the username
+  - user: foo           # username. Defaults to current user
 
-all_fonts:              # the fonts you want to install
+all_fonts:              # the fonts you want to install. Defaults shown here.
   - RobotoMono          # the name of these fonts must match the name of the
   - SourceCodePro       # font directory
   - DejaVuSansMono
@@ -31,3 +32,5 @@ Author Information
 ------------------
 
 Tiago M. Vieira - [https://github.com/tvieira](https://github.com/tvieira)
+Cruse, Si - [https://github.com/sicruse](https://github.com/sicruse)
+Mark Stosberg - [https://github.com/markstos](https://github.com/markstos)

@@ -1,8 +1,7 @@
 ---
 
 all_users:
-  - user: foo
-    homedir: /home/foo
+  - user: "{{ ansible_user_id }}"
 
 # see the list of fonts at https://github.com/powerline/fonts
 # the names must match the directory names for each font
