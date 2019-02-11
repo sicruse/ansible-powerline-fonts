@@ -1,11 +1,12 @@
-[![Build Status](https://travis-ci.org/tvieira/ansible-powerline-fonts.svg?branch=master)](https://travis-ci.org/tvieira/ansible-powerline-fonts)
-[![Ansible Galaxy](https://img.shields.io/ansible/role/20964.svg)](https://galaxy.ansible.com/tvieira//)
+[![Build Status](https://travis-ci.org/sicruse/ansible-powerline-fonts.svg?branch=master)](https://travis-ci.org/sicruse/ansible-powerline-fonts)
+[![Ansible Galaxy](https://img.shields.io/ansible/role/20964.svg)](https://galaxy.ansible.com/sicruse//)
 
 Powerline-Fonts
 ===============
 
 This role installs the powerline fonts from the project [https://github.com/powerline/fonts](https://github.com/powerline/fonts).
 
+Original Ansible role by Tiago M. Vieira, forked to accommodate MacOSX
 
 Role Variables
 --------------

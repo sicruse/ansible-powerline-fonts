@@ -1,5 +1,5 @@
 galaxy_info:
-  author: Tiago M. Vieira
+  author: Si Cruse
   description: this role installs the powerline fonts
   license: GPLv3
   min_ansible_version: 2.0
