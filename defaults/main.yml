@@ -1,11 +1,11 @@
 ---
-
-all_users:
+powerline_users:
   - user: "{{ ansible_user_id }}"
+    homedir: '{{ ansible_env.HOME }}' # the home dir for the username
 
 # see the list of fonts at https://github.com/powerline/fonts
 # the names must match the directory names for each font
-all_fonts:
+powerline_fonts:
   - RobotoMono
   - SourceCodePro
   - DejaVuSansMono

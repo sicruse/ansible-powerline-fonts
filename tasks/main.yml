@@ -28,7 +28,7 @@
     state: directory
     owner: "{{ item.user }}"
     # group: "{{ item.user }}"
-  with_items: "{{ all_users }}"
+  with_items: "{{ powerline_users }}"
   ignore_errors: yes
   tags:
     - powerline-fonts
@@ -36,8 +36,8 @@
 - name: copy fonts
   command: cp -r /tmp/powerline-fonts/{{ item[1] }} {{ '~' ~ item[0].user ~ '/' ~ font_directory | expanduser }}
   with_nested:
-   - "{{ all_users }}"
-   - "{{ all_fonts }}"
+   - "{{ powerline_users }}"
+   - "{{ powerline_fonts }}"
   tags:
     - powerline-fonts
 
@@ -48,12 +48,12 @@
     owner: "{{ item[0].user }}"
     # group: "{{ item[0].user }}"
   with_nested:
-   - "{{ all_users }}"
-   - "{{ all_fonts }}"
+   - "{{ powerline_users }}"
+   - "{{ powerline_fonts }}"
   ignore_errors: yes
   tags:
     - powerline-fonts
 
 - name: reset font cache
   command: fc-cache -f {{ '~' ~ item.user ~ '/' ~ font_directory | expanduser }}
-  with_items: "{{ all_users }}"
+  with_items: "{{ powerline_users }}"

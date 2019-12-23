@@ -14,10 +14,10 @@ Role Variables
 No role variables need to set due to reasonable defaults.
 
 ```yaml
-all_users:              # this role can configure for one or more users
+powerline_users:              # this role can configure for one or more users
   - user: foo           # username. Defaults to current user
 
-all_fonts:              # the fonts you want to install. Defaults shown here.
+powerline_fonts:              # the fonts you want to install. Defaults shown here.
   - RobotoMono          # the name of these fonts must match the name of the
   - SourceCodePro       # font directory
   - DejaVuSansMono
