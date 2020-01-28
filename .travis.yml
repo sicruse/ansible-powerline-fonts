@@ -12,7 +12,7 @@ install:
 script:
   - ansible-lint tasks/main.yml
   - ansible-playbook -i tests/inventory --syntax-check --list-tasks tests/test.yml -e "role_name=ansible-powerline-fonts"
-  - ansible-playbook -i tests/inventory --connection=local --sudo -vvvv tests/test.yml -u root -e "role_name=ansible-powerline-fonts"
+  - ansible-playbook -i tests/inventory --connection=local --become-user root -vvvv tests/test.yml -e "role_name=ansible-powerline-fonts"
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
