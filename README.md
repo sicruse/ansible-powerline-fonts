@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/sicruse/ansible-powerline-fonts.svg?branch=master)](https://travis-ci.org/sicruse/ansible-powerline-fonts)
-[![Ansible Galaxy](https://img.shields.io/ansible/role/20964.svg)](https://galaxy.ansible.com/sicruse//)
+[![Ansible Galaxy](https://img.shields.io/ansible/role/24878)](https://galaxy.ansible.com/sicruse/powerline-fonts)
 
 Powerline-Fonts
 ===============
