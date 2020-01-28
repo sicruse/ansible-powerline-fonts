@@ -4,6 +4,7 @@
 
   pre_tasks:
     - name: create user 'foo' for testing purpose
+      become: true
       user:
         name: foo
         comment: "Foo Doe"
